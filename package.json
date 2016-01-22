@@ -1,5 +1,5 @@
 {
-  "name": "ember-fr-button",
+  "name": "ember-frost-button",
   "version": "0.0.1",
   "description": "Simple Frost Button",
   "directories": {
@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "check-version-bump": "fr-bump check BP_FROST frost-button",
-    "prefr-publish": "fr-bump BP_FROST frost-button",
+    "check-version-bump": "echo 'check-version-bump not implemented yet'",
+    "prefr-publish": "echo 'prefr-publish not implemented yet'",
     "fr-publish": "npm publish .",
     "start": "ember server",
     "build": "ember build",
@@ -50,7 +50,6 @@
     "ember-truth-helpers": "^1.2.0",
     "ember-try": "~0.0.8",
     "fr-cli-bump": "^0.6.3",
-    "frost-svg": "~1.1.1",
     "jscs": "^2.7.0",
     "liquid-fire": "0.22.0"
   },
@@ -61,8 +60,7 @@
   "dependencies": {
     "ember-cli-babel": "^5.1.5",
     "ember-cli-htmlbars": "^1.0.1",
-    "ember-cli-sass": "5.1.0",
-    "frost-css": "~1.1.0"
+    "ember-cli-sass": "5.1.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

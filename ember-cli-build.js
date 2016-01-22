@@ -22,7 +22,6 @@ module.exports = function(defaults) {
 	  sassOptions: {
 		  includePaths: [
 			  'bower_components/bourbon/app/assets/stylesheets',
-			  'node_modules/frost-css/styles'
 		  ]
 	  },
     jscsOptions: {
