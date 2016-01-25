@@ -5,6 +5,11 @@ node_js:
 
 before_install:
   - npm install -g ember-cli bower
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+  - sudo apt-get update
+  - sudo apt-get install google-chrome-stable
+
 
 install:
   - "node --version"
@@ -19,12 +24,14 @@ before_script:
   - "sleep 3" # give xvfb some time to start
 
 script:
-  - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] && npm check-version-bump || echo "Skipping check-version-bump"'
+  - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] && npm run-script check-version-bump'
+  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && echo "Skipping check-version-bump"'
   - 'npm test'
 
 after_success:
   - "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
   - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && npm run-script frost-publish || echo "Skipping frost-publish"'
+  - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] && echo "Skipping frost-publish"'
 
 env:
   - CXX=g++-4.8
@@ -35,3 +42,4 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
+  - googlechrome
