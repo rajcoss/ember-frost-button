@@ -22,9 +22,15 @@ script:
   - 'npm test'
   - '[ "${TRAVIS_PULL_REQUEST}" != "false" ] && npm run-script frost-publish || false'
 
-after_script:
+after_success:
   - "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
 
 env:
-  global:
-    - TRAVIS_CI=true
+  - CXX=g++-4.8
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
