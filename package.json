@@ -8,8 +8,9 @@
   },
   "scripts": {
     "check-version-bump": "echo 'check-version-bump not implemented yet'",
-    "prefr-publish": "echo 'prefr-publish not implemented yet'",
-    "fr-publish": "npm publish .",
+    "prefrost-publish": "echo 'prefrost-publish not implemented yet'",
+    "frost-publish": "npm publish .",
+    "postfrost-publish": "echo 'postfrost-publish not implemented yet'",
     "start": "ember server",
     "build": "ember build",
     "test": "ember test"
