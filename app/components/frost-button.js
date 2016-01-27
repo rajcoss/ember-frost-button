@@ -1,1 +1,1 @@
-export { default } from 'frost-button/pods/components/frost-button/component';
+export { default } from 'ember-frost-button/pods/components/frost-button/component';
