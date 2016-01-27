@@ -6,10 +6,9 @@ node_js:
   - 5.3
 
 before_install:
-  - npm install -g ember-cli bower
+  - npm install -g ember-cli bower phantomjs
 
 install:
-  - firefox --version
   - npm install
   - bower install
 
