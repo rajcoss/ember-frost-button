@@ -1,0 +1,266 @@
+<div class='dummy-padding'>
+  <div class="dummy-text">
+    Due to issues with flexbox and button in Firefox, button styling has been updated.
+    Going forward, 'text', 'icon', 'info' and 'text+icon' styles need to be defined in a separate div.
+    <p><strong>Note: For backward compatibility, text and icon styles are still supported,
+        but it is recommended to update to the new pattern.</strong></p>
+    Below, there are two examples of old and new styling for various buttons.
+  </div>
+</div>
+
+<div class='dummy-padding'>
+  <div class="dummy-text">
+    <table border="1"  style="width:100%">
+      <tr>
+        <th>Old Styling</th>
+        <th>New Styling</th>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='text small primary'}}
+            Action
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='text small primary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='small primary'}}
+            <div class='text'>Action</div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='small primary'</div>
+          <div class="dummy-info">div class='text'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='text small secondary'}}
+            Action
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='text small secondary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='small secondary'}}
+            <div class="text">Action</div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='small secondary'</div>
+          <div class="dummy-info">div class='text'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='text small tertiary'}}
+            Action
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='text small tertiary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='small tertiary'}}
+            <div class="text">Action</div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='small tertiary'</div>
+          <div class="dummy-info">div class='text'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='text small primary'}}
+            Action
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='text small primary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='small primary'}}
+            <div class="text">Action</div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='small primary'</div>
+          <div class="dummy-info">div class='text'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='text medium primary'}}
+            Action
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='text medium primary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='medium primary'}}
+            <div class="text">Action</div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='medium primary'</div>
+          <div class="dummy-info">div class='text'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='text large primary'}}
+            Action
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='text large primary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='large primary'}}
+            <div class="text">Action</div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='large primary'</div>
+          <div class="dummy-info">div class='text'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='text small primary' disabled=true}}
+            Action
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='text small primary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='small primary' disabled=true}}
+            <div class="text">Action</div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='small primary'</div>
+          <div class="dummy-info">div class='text'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='text small primary' autofocus=true}}
+            Action
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='text small primary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='small primary' autofocus=true}}
+            <div class="text">Action</div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='small primary'</div>
+          <div class="dummy-info">div class='text'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='icon small primary'}}
+            <svg class="frost-svg" viewBox="55 0 40 40">
+              <rect x="57.9" y="17.9" fill="#FFFFFF" width="33.3" height="4.1"></rect>
+              <rect x="72.5" y="3.3" fill="#FFFFFF" width="4.1" height="33.3"></rect>
+            </svg>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='icon small primary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='small primary'}}
+            <div class="icon">
+              <svg class="frost-svg" viewBox="55 0 40 40">
+                <rect x="57.9" y="17.9" fill="#FFFFFF" width="33.3" height="4.1"></rect>
+                <rect x="72.5" y="3.3" fill="#FFFFFF" width="4.1" height="33.3"></rect>
+              </svg>
+            </div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='small primary'</div>
+          <div class="dummy-info">div class='icon'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='icon medium primary'}}
+            <svg class="frost-svg" viewBox="55 0 40 40">
+              <rect x="57.9" y="17.9" fill="#FFFFFF" width="33.3" height="4.1"></rect>
+              <rect x="72.5" y="3.3" fill="#FFFFFF" width="4.1" height="33.3"></rect>
+            </svg>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='icon medium primary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='medium primary'}}
+            <div class="icon">
+              <svg class="frost-svg" viewBox="55 0 40 40">
+                <rect x="57.9" y="17.9" fill="#FFFFFF" width="33.3" height="4.1"></rect>
+                <rect x="72.5" y="3.3" fill="#FFFFFF" width="4.1" height="33.3"></rect>
+              </svg>
+            </div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='medium primary'</div>
+          <div class="dummy-info">div class='icon'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='icon large primary'}}
+            <svg class="frost-svg" viewBox="55 0 40 40">
+              <rect x="57.9" y="17.9" fill="#FFFFFF" width="33.3" height="4.1"></rect>
+              <rect x="72.5" y="3.3" fill="#FFFFFF" width="4.1" height="33.3"></rect>
+            </svg>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='icon large primary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='large primary'}}
+            <div class="icon">
+              <svg class="frost-svg" viewBox="55 0 40 40">
+                <rect x="57.9" y="17.9" fill="#FFFFFF" width="33.3" height="4.1"></rect>
+                <rect x="72.5" y="3.3" fill="#FFFFFF" width="4.1" height="33.3"></rect>
+              </svg>
+            </div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='large primary'</div>
+          <div class="dummy-info">div class='icon'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='info extra-large primary'}}
+            <svg class="frost-svg" viewBox="55 0 40 40">
+              <rect x="57.9" y="17.9" fill="#FFFFFF" width="33.3" height="4.1"></rect>
+              <rect x="72.5" y="3.3" fill="#FFFFFF" width="4.1" height="33.3"></rect>
+            </svg>
+            <div class='content'>
+              <div class='alias'>Info alias</div>
+              <div class='details'>Info details</div>
+            </div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='info extra-large primary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='extra-large primary'}}
+            <div class="info">
+              <svg class="frost-svg" viewBox="55 0 40 40">
+                <rect x="57.9" y="17.9" fill="#FFFFFF" width="33.3" height="4.1"></rect>
+                <rect x="72.5" y="3.3" fill="#FFFFFF" width="4.1" height="33.3"></rect>
+              </svg>
+              <div class='content'>
+                <div class='alias'>Info alias</div>
+                <div class='details'>Info details</div>
+              </div>
+            </div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='extra-large primary'</div>
+          <div class="dummy-info">div class='info'</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{#frost-button on-click=(action 'action') class='icon text medium primary'}}
+            <svg class="frost-svg" viewBox="55 0 40 40">
+              <rect x="57.9" y="17.9" fill="#FFFFFF" width="33.3" height="4.1"></rect>
+              <rect x="72.5" y="3.3" fill="#FFFFFF" width="4.1" height="33.3"></rect>
+            </svg>
+            Text
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='icon text medium primary'</div>
+        </td>
+        <td>
+          {{#frost-button on-click=(action 'action') class='medium primary'}}
+            <div class="icon-text text">
+              <svg class="frost-svg" viewBox="55 0 40 40">
+                <rect x="57.9" y="17.9" fill="#FFFFFF" width="33.3" height="4.1"></rect>
+                <rect x="72.5" y="3.3" fill="#FFFFFF" width="4.1" height="33.3"></rect>
+              </svg>
+              <div class="text">Text</div>
+            </div>
+          {{/frost-button}}
+          <div class="dummy-info">frost-button class='medium primary'</div>
+          <div class="dummy-info">div class='icon-text'</div>
+          <div class="dummy-info">div class='text'</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
