@@ -1,3 +1,9 @@
+<div class="dummy-notification-container">
+	{{#each notifications as |notification|}}
+		{{notification-message notification=notification}}
+	{{/each}}
+</div>
+
 <div class='dummy-padding'>
   <div class="dummy-text">
     Due to issues with flexbox and button in Firefox, button styling has been updated.
