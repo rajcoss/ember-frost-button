@@ -1,14 +1,11 @@
-/* globals module */
-/* jshint node: true */
+'use strict'
 
-'use strict';
-
-var pkg = require('./package.json');
+const pkg = require('./package.json')
 
 module.exports = {
-	name: pkg.name,
+  name: pkg.name,
 
-	included: function(app) {
-		this._super.included(app);
-	}
-};
+  included: function (app) {
+    this._super.included(app)
+  }
+}

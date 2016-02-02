@@ -1,41 +1,32 @@
 language: node_js
 sudo: false
-
 node_js:
-  - '5.3'
-
+- '5.3'
 branches:
   except:
-    - /^v[0-9\.]+/
-
+  - /^v[0-9\.]+/
 before_install:
-  - npm install -g coveralls pr-bumper
-  - pr-bumper check
-
+- npm install -g coveralls pr-bumper
+- pr-bumper check
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 after_success:
-  - sed -i -- 's/SF:ember-frost-button\/\(.*\)/SF:addon\/\1.js/' coverage/lcov.info && rm -f coverage/lcov.info--
-  - cat coverage/lcov.info | coveralls
-
+- sed -i -- 's/SF:ember-frost-button\/\(.*\)/SF:addon\/\1.js/' coverage/lcov.info && rm -f coverage/lcov.info--
+- cat coverage/lcov.info | coveralls
 addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
-
 env:
   matrix:
-    - CXX=g++-4.8
+  - CXX=g++-4.8
   global:
-    - secure: COlOrjIlMucNZ3qDMPM6cGZ7H1WU93L9c5NclJzXP1IeUYncYkDis0+G+j7Rv7IPHwY53Z7Ms9ghRCk7rk1mM9jEAZZkJV6vfsgTYsHLusym9a4JckvXiAo3sxbZvHkcsU0yrmsc1l5p68RvvJ4DmlH0WdQGvtr4o8RpDbk76ZEnht3cvq5ANGZho7OUskAcNYdFc5r1nuH7I19zYO/cJrdQO9DU9I4x2AuAoBbC96qwVdn444s+hUb07urfL1ITh6+wCnxROkDlIrXxXucSSHJ1ML7HxvPsRkuUxvJI+HjPovk/PhnNreA6i8vGJRhZuDE+/+GTyVCW82Tmpx08A451T/FLBDMRdknBA7Y2U3bCQAv57rvn3giFXrYhKAtvO7ZlWL3/vWC1YQcRARVHfdCZRjUkVxnWMAdHb2mfZ+RhRVR1lcEXFF4CtNcz+1hnfDG1L5sCeJbP2WAHAhGuRYs470tdH7dA15xKOCTszNP0r7zhtwq9fbu1Or86suZgOihuT350OXvDQlh+Yli1Pbysvx9S/VXJfu0AykbQIKUgBWnlTJGPe/s1lMNX/34hZZIbzv8RY2jvEeVcCJ0cdmlrT3Sa+6CChkw982vsdKju9JcYim5UjZk84ExvVtkSaYu6UjM4BkFv/hFAiIX0g4fFcYeIL4mfVq/KwNsIE28=
-
+  - secure: COlOrjIlMucNZ3qDMPM6cGZ7H1WU93L9c5NclJzXP1IeUYncYkDis0+G+j7Rv7IPHwY53Z7Ms9ghRCk7rk1mM9jEAZZkJV6vfsgTYsHLusym9a4JckvXiAo3sxbZvHkcsU0yrmsc1l5p68RvvJ4DmlH0WdQGvtr4o8RpDbk76ZEnht3cvq5ANGZho7OUskAcNYdFc5r1nuH7I19zYO/cJrdQO9DU9I4x2AuAoBbC96qwVdn444s+hUb07urfL1ITh6+wCnxROkDlIrXxXucSSHJ1ML7HxvPsRkuUxvJI+HjPovk/PhnNreA6i8vGJRhZuDE+/+GTyVCW82Tmpx08A451T/FLBDMRdknBA7Y2U3bCQAv57rvn3giFXrYhKAtvO7ZlWL3/vWC1YQcRARVHfdCZRjUkVxnWMAdHb2mfZ+RhRVR1lcEXFF4CtNcz+1hnfDG1L5sCeJbP2WAHAhGuRYs470tdH7dA15xKOCTszNP0r7zhtwq9fbu1Or86suZgOihuT350OXvDQlh+Yli1Pbysvx9S/VXJfu0AykbQIKUgBWnlTJGPe/s1lMNX/34hZZIbzv8RY2jvEeVcCJ0cdmlrT3Sa+6CChkw982vsdKju9JcYim5UjZk84ExvVtkSaYu6UjM4BkFv/hFAiIX0g4fFcYeIL4mfVq/KwNsIE28=
 before_deploy:
-  - pr-bumper bump
-
+- pr-bumper bump
 deploy:
   provider: npm
   email: npm.ciena@gmail.com
@@ -45,7 +36,6 @@ deploy:
   on:
     branch: master
     tags: false
-
 notifications:
   slack:
-    secure: bEDzMCHgmL/mYj7e8wBhmVAbj6mhYceDwaF6iG8iTGMN0yzvAmBdyzkvqOYIrPjcVikT7Vs5zdSFxDYyh/6KP/5bE/aezQDIMtEgZDArgZ5mc7DOJl5w9XyL5id/K4MLYXpLEnv6Ws1hBSt56OhRwO39Rnwy50nL+rpKcvEx6vbnJKD9I8rQTR6G8sEZ5sCFLi3oF5vpmFRgWq17OuE9sBODF/Q7IA/mnpvcYHJHqz5i+2I/IeZ6yxUv3d+iUNdY3qR6Etd4qympDnDg1PndvuCnniBn+cf1wnd04AgU1pUFesE7jtY1feM/qxRqKtPNNIV7x4WD1+UZQIGAnEBeoxMIb2VrRTtHfBOiXCHfQ12V0CkcgK3Ca+Q/RC44xyz06F9rDsB96x6+wZWpPu5GnZc+hXv5REMvk7c4AIhwR5sHw/kAIUzNQgjau9MKoZe5NagCmhdl7JoNFtewHW7Mpz6k2XBoDm2c98R0TOVfD/apjERKfrIhaep6mFOUV4TO0vI3ZJt0FHTo5rHWBd0MIub7ccil3uEXzS4VV0xrijhq9+0DUWBWRhB8h2DlaZCu6fCdrSBrtY0KJFi6t5ipnTQcx2Q4vq4pYHLF6tIjXATuqW8SCWuf5Ma8DvW/fAtw02c6N27wqxG83O82RejnAJzzTZAeleoxHA+ei2/r5CM=
+    secure: fYjd30ji8nQmRPbcoYGpMwsjj4Ul7YT/QeKaU8qPz9BwQKXFnv3Rw6kv3+yGZJR1KrdyfueYhMC/no5M8RYVfoamECmuM1hCQGNnqkn6RUbhkKhcetzqrjymqH1Qa6+Hs7flPPM+et1757zx3hIYYdxjFU3OfK728SXSOhV8XfEqykAmZKy+waH2hpXfCmj+znYhgZbXeKdH5EJarWS2T7lpKJ3PNY1SmX+YZpNUqQV3+Xdcbr3Ia92tfcPzgn1p2RVB8bVHuOdsDodRMYAlUFYi9A20fZTjQuvOCp0YGPwoKTutn1kKuqSe1EG9bylbUoz3UxrYeyAivuriYLfRRrCTOeKH5JJlwkZ93mUV+FD4mSHQDQ92GF3bXJd6NHudQzD4qGTngz98HS9JBdaWqjJiN47I+w4STb6kk55gu7pZTF0Un+QqEmkADcQqbVdsE9Fbl0g0XUZxGxghews5U6bOO/u45MdhPwZWSsRgAdhshq3kdwBb70khHuvU8nK+x+fjZ+8O9yK8fCwib388IZasL5JPqnfd57MQ684bs5OnmgHcY6HFcYHF0ejCga+j/E+EN0QJQ8693sLMlw581YvNY0ZF/7Av/x5oCvYt37xm7ZMao5NhqfRFNDnoDIlJ3AnuD2wtM62JUjCOXvbkphWPqG9F2N4zmG0oCUKczhg=
