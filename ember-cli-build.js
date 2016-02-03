@@ -1,33 +1,16 @@
-/* global require, module */
-var EmberApp = require('ember-cli/lib/broccoli/ember-addon');
+const EmberApp = require('ember-cli/lib/broccoli/ember-addon')
 
-function testGenerator(relativePath, errors) {
-  if (errors) {
-    errors = '\\n' + this.escapeErrorString(errors);
-  }
-
-  var expectString = relativePath + ' should pass JSCS' + errors;
-
-  return [
-    'describe("JSCS - ' + relativePath + '", function () {',
-      'it("should pass jscs", function () {',
-        'expect(' + !errors + ', "' + expectString + '").to.be.ok;',
-      '});',
-    '});'
-  ].join('\n');
-}
-
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   var app = new EmberApp(defaults, {
-	  sassOptions: {
-		  includePaths: [
-			  'bower_components/bourbon/app/assets/stylesheets',
-		  ]
-	  },
-    jscsOptions: {
-      testGenerator: testGenerator
+    'ember-cli-mocha': {
+      useLintTree: false
+    },
+    sassOptions: {
+      includePaths: [
+        'bower_components/bourbon/app/assets/stylesheets'
+      ]
     }
-  });
+  })
 
   /*
     This build file specifes the options for the dummy test app of this
@@ -36,5 +19,5 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
-  return app.toTree();
-};
+  return app.toTree()
+}

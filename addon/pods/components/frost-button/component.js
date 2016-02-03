@@ -1,5 +1,5 @@
-import Ember from 'ember';
-import _ from 'lodash/lodash';
+import Ember from 'ember'
+import _ from 'lodash/lodash'
 
 export default Ember.Component.extend({
   tagName: 'button',
@@ -21,13 +21,13 @@ export default Ember.Component.extend({
   type: 'button',
   title: null,
 
-  onclick: Ember.on('click', function(event) {
+  onclick: Ember.on('click', function (event) {
     if (!Ember.ViewUtils.isSimpleClick(event)) {
-      return true;
+      return true
     }
 
     if (!this.get('disabled') && _.isFunction(this.attrs['on-click'])) {
-      this.attrs['on-click'](this.get('id'));
+      this.attrs['on-click'](this.get('id'))
     }
   })
-});
+})
