@@ -14,7 +14,9 @@
     "ember-mocha": "~0.8.6",
     "Faker": "3.0.1",
     "lodash": "3.10.1",
-    "pretender": "0.10.1"
+    "pretender": "0.10.1",
+    "marked": "^0.3.5",
+    "highlightjs": "^9.1.0"
   },
   "resolutions": {
     "ember": "2.2.0"

@@ -50,7 +50,8 @@
     "ember-try": "~0.0.8",
     "eslint": "^1.10.3",
     "eslint-config-frost-standard": "^0.2.4",
-    "liquid-fire": "0.22.0"
+    "liquid-fire": "0.22.0",
+    "markdown-code-highlighting": "0.0.6"
   },
   "keywords": [
     "ember-addon",

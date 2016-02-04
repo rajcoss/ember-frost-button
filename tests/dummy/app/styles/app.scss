@@ -1,5 +1,11 @@
 @import 'bourbon';
 
+// TODO: replace these with referenes to ember-frost-css classes when available
+html, body {
+  font-family: 'Roboto, sans-serif';
+  color: rgb(102, 102, 102);
+}
+
 .dummy-notification-container {
   position: fixed;
   top: 60px;
@@ -10,41 +16,23 @@
   margin: auto;
 }
 
-.dummy-body {
-  @include display(flex);
-  @include flex-direction(row);
-}
-
-.dummy-content {
-  @include flex(1);
-}
-.dummy-padding {
-  margin: 10px;
-  @include display(flex);
-}
-
-.dummy-alternate {
-  @include display(flex);
-  @include flex-direction(row);
-}
-
-.dummy-text {
-  width: 75%;
-  font-size: 14px;
-}
-
-.dummy-info {
-	font-size: 12px;
-}
-
 th, td {
   padding: 5px;
   text-align: left;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
-.frost-tabs.iframe {
-	.navigation {
-		display: none;
-	}
+.example {
+  display: table;
+  vertical-align: middle;
+  .title {
+    display: table-row;
+    font-size: 1.25em;
+    font-weight: bold;
+  }
+  .demo, .code {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px;
+  }
 }
