@@ -2,7 +2,7 @@ import Ember from 'ember'
 
 export default Ember.Controller.extend({
   actions: {
-    action () {
+    click () {
       this.notifications.addNotification({
         message: 'Action sent',
         type: 'success',
