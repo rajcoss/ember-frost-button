@@ -92,4 +92,3 @@ To run the server run `ember server` from the root of the repository and visit t
 
 ### Testing
 Run `ember test` from the root of the project to execute the test suite and output code coverage.
-
