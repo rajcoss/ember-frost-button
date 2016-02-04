@@ -10,9 +10,12 @@ then
     exit 0
 fi
 
-# TODO: is there a more optimal way to do this without a fresh clone/install?
+ember build --prod
 git clone https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG} ${TMP_GH_PAGES_DIR} > /dev/null 2>&1
 cd ${TMP_GH_PAGES_DIR}
-npm install && bower install
-ember github-pages:commit --message "Automated publication of demo for ${VERSION}"
+git checkout gh-pages
+git rm -rf *
+cp -r ../dist/* .
+git add --all
+git commit -m "[ci skip] Automated gh-pages commit of ${VERSION}"
 git push origin gh-pages > /dev/null 2>&1
