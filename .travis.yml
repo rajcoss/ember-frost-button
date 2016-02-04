@@ -37,6 +37,8 @@ deploy:
     branch: master
     tags: false
 after_deploy:
+- git fetch my-origin
+- git checkout -b gh-pages my-origin/gh-pages
 - export NEW_VERSION=`node -e "console.log(require('./package.json').version)"`
 - ember github-pages:commit --message "Automated publication of demo for ${NEW_VERSION}"
 - git push my-origin gh-pages
