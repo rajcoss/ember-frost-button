@@ -37,11 +37,7 @@ deploy:
     branch: master
     tags: false
 after_deploy:
-- git fetch origin gh-pages
-- git branch gh-pages origin/gh-pages
-- export NEW_VERSION=`node -e "console.log(require('./package.json').version)"`
-- ember github-pages:commit --message "Automated publication of demo for ${NEW_VERSION}"
-- git push my-origin gh-pages
+- .travis/publish-gh-pages.sh
 notifications:
   slack:
     secure: fYjd30ji8nQmRPbcoYGpMwsjj4Ul7YT/QeKaU8qPz9BwQKXFnv3Rw6kv3+yGZJR1KrdyfueYhMC/no5M8RYVfoamECmuM1hCQGNnqkn6RUbhkKhcetzqrjymqH1Qa6+Hs7flPPM+et1757zx3hIYYdxjFU3OfK728SXSOhV8XfEqykAmZKy+waH2hpXfCmj+znYhgZbXeKdH5EJarWS2T7lpKJ3PNY1SmX+YZpNUqQV3+Xdcbr3Ia92tfcPzgn1p2RVB8bVHuOdsDodRMYAlUFYi9A20fZTjQuvOCp0YGPwoKTutn1kKuqSe1EG9bylbUoz3UxrYeyAivuriYLfRRrCTOeKH5JJlwkZ93mUV+FD4mSHQDQ92GF3bXJd6NHudQzD4qGTngz98HS9JBdaWqjJiN47I+w4STb6kk55gu7pZTF0Un+QqEmkADcQqbVdsE9Fbl0g0XUZxGxghews5U6bOO/u45MdhPwZWSsRgAdhshq3kdwBb70khHuvU8nK+x+fjZ+8O9yK8fCwib388IZasL5JPqnfd57MQ684bs5OnmgHcY6HFcYHF0ejCga+j/E+EN0QJQ8693sLMlw581YvNY0ZF/7Av/x5oCvYt37xm7ZMao5NhqfRFNDnoDIlJ3AnuD2wtM62JUjCOXvbkphWPqG9F2N4zmG0oCUKczhg=
