@@ -1,7 +1,7 @@
-[ci-img]: https://img.shields.io/travis/ciena-frost/ember-frost-button.svg "Travis CI Build Status"
+[ci-img]: https://travis-ci.org/ciena-frost/ember-frost-button.svg "Travis CI Build Status"
 [ci-url]: https://travis-ci.org/ciena-frost/ember-frost-button
 
-[cov-img]: https://img.shields.io/coveralls/ciena-frost/ember-frost-button.svg "Coveralls Code Coverage"
+[cov-img]: https://coveralls.io/repos/github/ciena-frost/ember-frost-button/badge.svg?branch=master "Coveralls Code Coverage"
 [cov-url]: https://coveralls.io/github/ciena-frost/ember-frost-button
 
 [npm-img]: https://img.shields.io/npm/v/ember-frost-button.svg "NPM Version"
