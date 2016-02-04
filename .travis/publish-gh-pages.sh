@@ -10,7 +10,7 @@ then
     exit 0
 fi
 
-ember build
+ember build --prod
 git clone https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG} ${TMP_GH_PAGES_DIR} > /dev/null 2>&1
 cd ${TMP_GH_PAGES_DIR}
 git checkout gh-pages
