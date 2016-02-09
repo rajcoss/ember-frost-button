@@ -1,6 +1,6 @@
 {
   "name": "ember-frost-button",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "description": "Simple Frost Button",
   "frostGuideDirectory": "ui-components/button-controls/button",
   "directories": {
