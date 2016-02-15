@@ -2,6 +2,16 @@
 @import 'node_modules/ember-frost-css-core/scss/frost-core';
 @import 'node_modules/ember-frost-theme/scss/frost-theme';
 
+@mixin button-color ($color) {
+  color: $color;
+  svg * {
+    stroke: $color;
+    fill: $color;
+  }
+}
+
+$frost-color-button-primary-active: $frost-color-blue-4; // TODO move to ember-frost-theme
+
 .frost-button {
   padding: 0;
   border: none;
@@ -26,7 +36,7 @@
   // Function based coloring
   &.primary {
     background-color: $frost-color-button-primary-bg;
-    color: $frost-color-button-primary;
+    @include button-color($frost-color-button-primary);
 
     &:hover {
       background-color: $frost-color-button-primary-hover-bg;
@@ -40,14 +50,14 @@
 
     &:active {
       background-color: $frost-color-button-primary-bg;
-      color: $frost-color-blue-4; // TODO canonical variable
+      @include button-color($frost-color-button-primary-active);
     }
   }
 
   &.secondary {
     border: 1px solid $frost-color-button-secondary-border;
     background-color: $frost-color-button-secondary-bg;
-    color: $frost-color-button-secondary;
+    @include button-color($frost-color-button-secondary);
 
     &:hover {
       box-shadow: 1px 1px 1px 1px lightgrey; // TODO Variable
@@ -60,13 +70,13 @@
 
     &:active {
       background-color: $frost-color-button-secondary-active-bg;
-      color: $frost-color-button-secondary-active;
+      @include button-color($frost-color-button-secondary-active);
     }
   }
 
   &.tertiary {
     background-color: $frost-color-button-tertiary-bg;
-    color: $frost-color-button-tertiary;
+    @include button-color($frost-color-button-tertiary);
 
     &:hover {
       background-color: $frost-color-button-tertiary-hover-bg;
@@ -77,7 +87,7 @@
     }
 
     &:active {
-      color: $frost-color-button-tertiary-active;
+      @include button-color($frost-color-button-tertiary-active);
     }
   }
 
@@ -156,6 +166,16 @@
 
     .text {
       margin-left: 10px;
+    }
+  }
+
+  &:active {
+    > .info {
+      background-color: $frost-color-button-primary-bg;
+      @include button-color($frost-color-button-primary-active);
+      .content .text, .content .subtext {
+        color: $frost-color-button-primary-active;
+      }
     }
   }
 
