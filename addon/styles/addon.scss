@@ -1,7 +1,184 @@
 @import 'bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import 'node_modules/ember-frost-css-core/scss/frost-core';
+@import 'node_modules/ember-frost-theme/scss/frost-theme';
 
-// Temporarily imported some frost-css code directly here until that is published
-// previously we were importing: node_modules/frost-css/styles/frost/variables;
-@import './frost-css/variables';
+.frost-button {
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  font-family: $frost-font-family;
+  background-color: transparent;
+  color: $frost-color-white;
+  cursor: pointer;
 
-@import './frost-button';
+  &:focus, &:active {
+    outline: none;
+  }
+
+  &.disabled {
+    opacity: 0.25;
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
+
+  // Function based coloring
+  &.primary {
+    background-color: $frost-color-button-primary-bg;
+    color: $frost-color-button-primary;
+
+    &:hover {
+      background-color: $frost-color-button-primary-hover-bg;
+      box-shadow: 0 0 1px 1px lightgrey; // TODO Variable
+    }
+
+    &.disabled:hover {
+      background-color: $frost-color-button-primary-bg;
+      box-shadow: none;
+    }
+
+    &:active {
+      background-color: $frost-color-button-primary-bg;
+      color: $frost-color-blue-4; // TODO canonical variable
+    }
+  }
+
+  &.secondary {
+    border: 1px solid $frost-color-button-secondary-border;
+    background-color: $frost-color-button-secondary-bg;
+    color: $frost-color-button-secondary;
+
+    &:hover {
+      box-shadow: 1px 1px 1px 1px lightgrey; // TODO Variable
+    }
+
+    &.disabled:hover {
+      background-color: $frost-color-button-secondary-bg;
+      box-shadow: none;
+    }
+
+    &:active {
+      background-color: $frost-color-button-secondary-active-bg;
+      color: $frost-color-button-secondary-active;
+    }
+  }
+
+  &.tertiary {
+    background-color: $frost-color-button-tertiary-bg;
+    color: $frost-color-button-tertiary;
+
+    &:hover {
+      background-color: $frost-color-button-tertiary-hover-bg;
+    }
+
+    &.disabled:hover {
+      background-color: $frost-color-button-tertiary-bg;
+    }
+
+    &:active {
+      color: $frost-color-button-tertiary-active;
+    }
+  }
+
+  // Sizes
+  &.extra-large {
+    height: 60px;
+    padding: 0 30px 0 15px;
+    font-size: $frost-font-m;
+
+    .frost-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &.large {
+    height: 50px;
+    padding: 0 20px;
+    font-size: $frost-font-m;
+
+    .frost-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &.medium {
+    height: 40px;
+    padding: 0 20px;
+    font-size: $frost-font-s;
+
+    .frost-icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &.small {
+    height: 30px;
+    padding: 0 10px;
+    font-size: $frost-font-xs;
+
+    .frost-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  // Content - text
+  &.text {
+    // Deprecated format
+    vertical-align: middle;
+  }
+
+  > .text {
+    vertical-align: middle;
+  }
+
+  // Content - icon
+  &.icon {
+    // Deprecated format
+    @include display(inline-flex);
+  }
+
+  > .icon {
+    height: 100%;
+    @include display(flex);
+    @include align-items(center);
+  }
+
+  // Content - text-info
+  > .icon-text {
+    @include display(flex);
+    @include flex-direction(row);
+    @include align-items(center);
+
+    .text {
+      margin-left: 10px;
+    }
+  }
+
+  // Content - info
+  > .info {
+    @include display(flex);
+    @include align-items(center);
+
+    .content {
+      @include display(flex);
+      @include flex-direction(column);
+      @include align-items(flex-start);
+      padding-left: 10px;
+
+      .text {
+        font-size: $frost-font-m;
+        color: $frost-color-button-primary;
+      }
+
+      .subtext {
+        font-size: $frost-font-xs;
+        color: opacify($frost-color-white, 0.8);
+      }
+    }
+  }
+}
