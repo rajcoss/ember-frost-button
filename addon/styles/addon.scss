@@ -177,7 +177,7 @@
 
       .subtext {
         font-size: $frost-font-xs;
-        color: opacify($frost-color-white, 0.8);
+        color: rgba($frost-color-white, 0.8);
       }
     }
   }
