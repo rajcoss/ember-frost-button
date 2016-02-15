@@ -1,9 +1,11 @@
 @import 'bourbon';
+@import 'frost-theme';
+@import 'frost-core';
 
-// TODO: replace these with referenes to ember-frost-css classes when available
 html, body {
-  font-family: 'Roboto, sans-serif';
+  font-family: $frost-font-family;
   color: rgb(102, 102, 102);
+  padding: 5px;
 }
 
 .dummy-notification-container {
@@ -32,11 +34,12 @@ th, td {
   vertical-align: middle;
   .title {
     display: table-row;
-    font-size: 1.25em;
+    font-size: $frost-font-m;
     font-weight: bold;
   }
   .demo, .code {
     display: table-cell;
+    font-size: $frost-font-xs;
     vertical-align: middle;
     padding: 15px;
   }
