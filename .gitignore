@@ -18,3 +18,6 @@ npm-debug.log
 testem.log
 .idea
 *.swp
+
+test.tar.gz
+tests/e2e/test-config.json
