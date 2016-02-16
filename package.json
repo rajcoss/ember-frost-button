@@ -11,8 +11,6 @@
     "lint": "eslint .",
     "start": "ember server",
     "build": "ember build",
-    "e2e-test": "wdio-client remote_e2e_test 192.168.56.103:3000 dist tests/e2e",
-    "update_screenshots": "wdio-client update_screenshots",
     "test": "npm run-script lint && ember test"
   },
   "main": "index.js",
@@ -47,8 +45,7 @@
     "eslint": "^1.10.3",
     "eslint-config-frost-standard": "^0.2.4",
     "liquid-fire": "0.22.0",
-    "markdown-code-highlighting": "^0.0.6",
-    "webdriverio-client": "git+https://github.com/rajcoss/webdriverio-client.git"
+    "markdown-code-highlighting": "^0.0.6"
   },
   "keywords": [
     "ember-addon",
